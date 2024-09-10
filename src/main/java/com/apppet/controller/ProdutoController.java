@@ -22,12 +22,12 @@ public class ProdutoController {
         this.produtoService = produtoService;
     }
 
-    @GetMapping("/produtos")
+    @GetMapping("/api/produtos")
     public List<Produto> listaTodos() {
         return produtoService.listarTodos();
     }
 
-    @PostMapping("/produtos")
+    @PostMapping("/api/produtos")
     public ResponseEntity<Produto> criarProduto(@RequestBody Produto produto) {
         Produto novoProduto = produtoRepository.save(produto);
         return ResponseEntity.ok(novoProduto);
